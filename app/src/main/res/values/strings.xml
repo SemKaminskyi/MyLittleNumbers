@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyLittleNumbers</string>
+    <string name="one">Один</string>
+    <string name="two">Два</string>
+    <string name="three">Три</string>
+    <string name="four">Четыре</string>
+    <string name="five">Пять</string>
+    <string name="six">Шесть</string>
+    <string name="seven">Семь</string>
+    <string name="eight">Восемь</string>
+    <string name="nine">Девять</string>
+    <string name="ten">Десять</string>
+</resources>

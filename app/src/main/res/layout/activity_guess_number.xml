@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_wood"
+    tools:context=".ui.guess_number.GuessNumber">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gn_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/ln_margin_bottom"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toStartOf="@+id/gn_2"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/images_1" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gn_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/ln_margin_bottom"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toStartOf="@+id/gn_3"
+        app:layout_constraintStart_toEndOf="@+id/gn_1">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/images_2" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gn_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/ln_margin_bottom"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toStartOf="@+id/gn_4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/gn_2">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/images_3" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gn_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/ln_margin_bottom"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toStartOf="@+id/gn_5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/gn_3">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/images_4" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gn_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/ln_margin_bottom"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toStartOf="@+id/gn_6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/gn_4">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/images_5" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gn_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/ln_margin_bottom"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toStartOf="@+id/gn_7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/gn_5">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/images_6" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gn_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/ln_margin_bottom"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toStartOf="@+id/gn_8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/gn_6">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/images_7" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gn_8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/ln_margin_bottom"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toStartOf="@+id/gn_9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/gn_7">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/images_8" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gn_9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/ln_margin_bottom"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toStartOf="@+id/gn_10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/gn_8">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/images_9" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gn_10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/ln_margin_bottom"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/gn_9">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/images_10" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gn_big_img_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/ln_margin_bottom"
+        android:visibility="invisible"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintDimensionRatio="1:1.3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/gn_big_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/images_1" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/gn_name_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:text="Угадай цифру"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/gn_big_img_container"
+        app:layout_constraintStart_toStartOf="@+id/gn_big_img_container"
+        app:layout_constraintTop_toBottomOf="@+id/gn_big_img_container" />
+
+    <ImageButton
+        android:id="@+id/gn_play"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:backgroundTint="@color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_play_circle_filled_24"
+        app:layout_constraintBottom_toTopOf="@+id/gn_name_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/gn_stop"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_stop_circle_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/gn_live"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_favorite_24"
+        app:layout_constraintEnd_toStartOf="@id/gn_stop"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gn_live_num"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:translationZ="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gn_live"
+        app:layout_constraintEnd_toEndOf="@+id/gn_live"
+        app:layout_constraintStart_toStartOf="@+id/gn_live"
+        app:layout_constraintTop_toTopOf="@+id/gn_live"
+        tools:text="3" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Рекорд"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gn_stop" />
+
+    <TextView
+        android:id="@+id/gn_record_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="00000"
+        android:textColor="#E1B721"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_emoji_events_24"
+        app:layout_constraintBottom_toBottomOf="@+id/gn_record_num"
+        app:layout_constraintDimensionRatio="1:1.2"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/gn_interval_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Итервал (cek)"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/gn_plus"
+        app:layout_constraintStart_toStartOf="@+id/gn_minus"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/gn_minus"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_minus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gn_interval_label" />
+
+    <TextView
+        android:id="@+id/gn_interval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/gn_minus"
+        app:layout_constraintStart_toEndOf="@+id/gn_minus"
+        app:layout_constraintTop_toBottomOf="@+id/gn_interval_label"
+        tools:text="3" />
+
+    <ImageButton
+        android:id="@+id/gn_plus"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintStart_toEndOf="@+id/gn_interval"
+        app:layout_constraintTop_toBottomOf="@+id/gn_interval_label" />
+</androidx.constraintlayout.widget.ConstraintLayout>
