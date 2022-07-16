@@ -22,7 +22,7 @@ class GuessNumber : AppCompatActivity() {
 
     private lateinit var prefManager: PrefManager
 
-    private var speedTimer: CountDownTimer? =null
+    private var speedTimer: CountDownTimer? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGuessNumberBinding.inflate(layoutInflater)
@@ -31,32 +31,32 @@ class GuessNumber : AppCompatActivity() {
         prefManager = PrefManager(this)
 
         vm.speed.value = prefManager.readSpeed()
+        vm.firstNumber = prefManager.readFirstNum()
 
         lifecycleScope.launchWhenCreated {
-            vm.speed.collect{
-                finishGame()
+            vm.speed.collect {
                 binding.gnInterval.text = it.toString()
                 prefManager.saveSpeed(it)
+                if (vm.isPlay) {
+                    finishGame()
+                }
             }
         }
+
         binding.gnPlay.setOnClickListener {
             binding.gnPlay.invisible()
-            startOneTimer()
             vm.isPlay = true
-            vm.oldScore=prefManager.readScore()
+            startOneTimer()
+            vm.oldScore = prefManager.readScore()
             Timber.d("play on")
         }
         binding.gnStop.setOnClickListener {
             finishGame()
-            vm.isPlay = false
             Timber.d("play off")
         }
 
         lifecycleScope.launchWhenCreated {
             vm.live.collect {
-                if (it<0){
-                    finishGame()
-                }
                 binding.gnLiveNum.text = it.toString()
                 Timber.d("life is $it")
             }
@@ -65,7 +65,7 @@ class GuessNumber : AppCompatActivity() {
         lifecycleScope.launchWhenCreated {
             vm.wrongAnswer.collect {
                 Timber.d("wrongNum changed $it")
-                if (it>0){
+                if (it > 0) {
                     Timber.d("success ")
                     speedTimer?.cancel()
                     playSuccess()
@@ -76,134 +76,190 @@ class GuessNumber : AppCompatActivity() {
         }
 
         binding.gnPlus.setOnClickListener {
-            vm.speed.value = vm.speed.value +1
+            vm.speed.value = vm.speed.value + 1
         }
 
         binding.gnMinus.setOnClickListener {
-            vm.speed.value = vm.speed.value -1
+            vm.speed.value = vm.speed.value - 1
         }
 
         binding.gn1.setOnClickListener {
             if (vm.isPlay) {
-                chooseWrite(1)
                 bigImage(R.drawable.images_1)
+                chooseWrite(1)
                 Timber.d("click 1")
             }
         }
         binding.gn2.setOnClickListener {
-            chooseWrite(2)
-            Timber.d("click 2")
+            if (vm.isPlay) {
+                bigImage(R.drawable.images_2)
+                chooseWrite(2)
+            }
         }
         binding.gn3.setOnClickListener {
-            chooseWrite(3)
+            if (vm.isPlay) {
+                bigImage(R.drawable.images_3)
+                chooseWrite(3)
+            }
         }
         binding.gn4.setOnClickListener {
-            chooseWrite(4)
+            if (vm.isPlay) {
+                bigImage(R.drawable.images_4)
+                chooseWrite(4)
+            }
         }
         binding.gn5.setOnClickListener {
-            chooseWrite(5)
+            if (vm.isPlay) {
+                bigImage(R.drawable.images_5)
+                chooseWrite(5)
+            }
         }
         binding.gn6.setOnClickListener {
-            chooseWrite(6)
+            if (vm.isPlay) {
+                bigImage(R.drawable.images_6)
+                chooseWrite(6)
+            }
         }
         binding.gn7.setOnClickListener {
-            chooseWrite(7)
+            if (vm.isPlay) {
+                bigImage(R.drawable.images_7)
+                chooseWrite(7)
+            }
         }
         binding.gn8.setOnClickListener {
-            chooseWrite(8)
+            if (vm.isPlay) {
+                bigImage(R.drawable.images_8)
+                chooseWrite(8)
+            }
         }
         binding.gn9.setOnClickListener {
-            chooseWrite(9)
+            if (vm.isPlay) {
+                bigImage(R.drawable.images_9)
+                chooseWrite(9)
+            }
         }
         binding.gn10.setOnClickListener {
-            chooseWrite(10)
+            if (vm.isPlay) {
+                bigImage(R.drawable.images_10)
+                chooseWrite(10)
+            }
         }
 
 
     }
 
-    private fun waitTwoSec() {
-        object : CountDownTimer(2000, 1000) {
+    private fun waitTwoSec(bol: Boolean,  int: Int) {
+        object : CountDownTimer((int*1000).toLong(), 1000) {
             override fun onTick(p0: Long) {}
 
             override fun onFinish() {
-                startOneTimer()
+                binding.gnBigImgContainer.invisible()
+                if (bol) {
+                    startOneTimer()
+                } else {
+                    finishGame()
+                }
             }
         }.start()
     }
 
-    private fun chooseWrite(i: Int){
-        if (i==vm.randomInt){
-            vm.wrongAnswer.value=vm.wrongAnswer.value+1
-        }else{
-            minusOneLife()
-            Timber.d("livevalue -1 = ${vm.live.value}")
+    private fun chooseWrite(i: Int) {
+        speedTimer?.cancel()
+        if (i == vm.randomInt) {
+            vm.wrongAnswer.value = vm.wrongAnswer.value + 1
+        } else {
             playFail()
+            Timber.d("livevalue -1 = ${vm.live.value}")
         }
     }
 
     private fun playFail() {
         Timber.d("play fail")
-        val mps = MediaPlayer.create(this,R.raw.try_again)
+        minusOneLife()
+        //TODO  add diiferent sound try again
+        val mps = MediaPlayer.create(this, R.raw.try_again)
         mps.start()
-        waitTwoSec()
+        if (vm.live.value == 0) {
+            waitTwoSec(false,2)
+        } else {
+            waitTwoSec(true,2)
+        }
     }
 
-    private fun playSuccess(){
-        Timber.d("play success")
-        val mps = MediaPlayer.create(this,R.raw.good)
+    private fun playFinish() {
+        Timber.d("play finish")
+        val mps = MediaPlayer.create(this, R.raw.finish_game)
         mps.start()
-        waitTwoSec()
+    }
+
+    private fun playSuccess() {
+        Timber.d("play success")
+        val mps = MediaPlayer.create(this, R.raw.good)
+        mps.start()
+        waitTwoSec(true,2)
+    }
+    private fun playNewScore() {
+        Timber.d("play new score")
+        val mps = MediaPlayer.create(this, R.raw.new_score)
+        mps.start()
+        waitTwoSec(false,4)
     }
 
     override fun onPause() {
         super.onPause()
-        vm.isPlay = false
-        finishGame()
+        if (vm.isPlay) finishGame()
     }
-    private fun finishGame(){
-        vm.isPlay=false
-        binding.gnPlay.visible()
+
+    private fun finishGame() {
+        vm.isPlay = false
         binding.gnBigImgContainer.invisible()
+        binding.gnPlay.visible()
+        binding.gnNewRecordContainer.gone()
         speedTimer?.cancel()
-        vm.live.value =3
         saveScore()
+        prefManager.saveFirstNum(vm.firstNumber)
         vm.wrongAnswer.value = 0
         Timber.d("game stop")
-        //TOdo ты побил рекорд
+        vm.live.value = 3
     }
-    private fun startOneTimer(){
-        Timber.d("startOneTimer")
-        vm.playOne(this)
-        speedTimer = object : CountDownTimer( (vm.speed.value*1000).toLong(),1000) {
-            override fun onTick(p0: Long) {}
 
-            override fun onFinish() {
-            Timber.d("finish timer")
-                minusOneLife()
-            }
+    private fun startOneTimer() {
+        if (vm.isPlay) {
+            Timber.d("startOneTimer")
+            vm.playOne(this)
+            speedTimer = object : CountDownTimer((vm.speed.value * 1000).toLong(), 1000) {
+                override fun onTick(p0: Long) {}
 
-        }.start()
+                override fun onFinish() {
+                    Timber.d("finish timer")
+                    playFail()
+                }
+
+            }.start()
+        }
     }
 
     private fun minusOneLife() {
         vm.live.value = vm.live.value - 1
         speedTimer?.cancel()
-        startOneTimer()
-
     }
 
 
     private fun saveScore() {
         if (vm.wrongAnswer.value > prefManager.readScore()) {
             prefManager.saveScore(vm.wrongAnswer.value)
+            binding.gnNewRecord.text = vm.wrongAnswer.value.toString()
+            binding.gnNewRecordContainer.visible()
+            vm.oldScore = vm.wrongAnswer.value
+            playNewScore()
+        }else{
+            playFinish()
         }
     }
 
 
-
     private fun bigImage(int: Int) {
-        binding.gnBigImgContainer.visible()
         binding.gnBigImg.setImageResource(int)
+        binding.gnBigImgContainer.visible()
     }
 }

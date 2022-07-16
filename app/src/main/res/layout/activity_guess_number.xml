@@ -332,7 +332,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:text="00000"
-        android:textColor="#E1B721"
+        android:textColor="@color/gold"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -398,4 +398,36 @@
         android:src="@drawable/ic_plus"
         app:layout_constraintStart_toEndOf="@+id/gn_interval"
         app:layout_constraintTop_toBottomOf="@+id/gn_interval_label" />
+    
+    <LinearLayout
+        android:id="@+id/gn_new_record_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="15dp"
+        android:background="@drawable/background_wood"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="50sp"
+            android:textColor="@color/black"
+            android:padding="32dp"
+            android:layout_gravity="center"
+            android:text="ты установил новый рекорд"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/gn_new_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="80sp"
+            android:textColor="@color/gold"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
