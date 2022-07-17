@@ -20,15 +20,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
+        <ImageView
+            android:id="@+id/iv1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:scaleType="fitXY"
             android:focusable="false"
             android:clickable="false"
             android:src="@drawable/learn_numbers"
-            />
+            android:background="@null"
+            android:contentDescription="TODO" />
 
     </androidx.cardview.widget.CardView>
 
@@ -59,16 +60,14 @@
         app:layout_constraintStart_toEndOf="@+id/main_game_1"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:scaleType="fitXY"
             android:focusable="false"
             android:clickable="false"
             android:src="@drawable/guess"
-
-            />
+            android:contentDescription="TODO" />
 
     </androidx.cardview.widget.CardView>
 
