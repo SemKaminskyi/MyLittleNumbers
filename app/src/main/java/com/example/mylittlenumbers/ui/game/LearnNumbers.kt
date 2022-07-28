@@ -1,4 +1,4 @@
-package com.example.mylittlenumbers.ui
+package com.example.mylittlenumbers.ui.game
 
 import android.media.MediaPlayer
 import android.net.Uri

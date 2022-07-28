@@ -1,12 +1,10 @@
-package com.example.mylittlenumbers.ui.guess_number
+package com.example.mylittlenumbers.ui.game.guess_number
 
 import android.content.Context
 import android.media.MediaPlayer
 import androidx.lifecycle.ViewModel
 import com.example.mylittlenumbers.R
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.asStateFlow
 import timber.log.Timber
 import kotlin.random.Random
 

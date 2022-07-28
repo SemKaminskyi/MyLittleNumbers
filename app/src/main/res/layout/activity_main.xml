@@ -11,8 +11,8 @@
         android:id="@+id/main_game_1"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="32dp"
         app:cardCornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="3:1"
         app:layout_constraintEnd_toStartOf="@+id/main_game_2"
         app:layout_constraintHeight_percent=".2"
@@ -25,21 +25,22 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:focusable="false"
-            android:clickable="false"
-            android:src="@drawable/learn_numbers"
             android:background="@null"
-            android:contentDescription="TODO" />
+            android:clickable="false"
+            android:contentDescription="TODO"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/learn_numbers" />
 
     </androidx.cardview.widget.CardView>
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="учить цифры"
+        android:text="арифметика"
         android:textColor="@color/black"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -65,6 +66,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:focusable="false"
+            android:scaleType="fitXY"
             android:clickable="false"
             android:src="@drawable/guess"
             android:contentDescription="TODO" />
@@ -75,7 +77,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="угадай цифру"
         android:textColor="@color/black"
@@ -84,6 +85,48 @@
         app:layout_constraintEnd_toEndOf="@+id/main_game_2"
         app:layout_constraintStart_toStartOf="@+id/main_game_2"
         app:layout_constraintTop_toBottomOf="@+id/main_game_2" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/main_game_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="64dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="3:1"
+        app:layout_constraintEnd_toStartOf="@+id/main_game_2"
+        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintHorizontal_bias="0.5"
+
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:clickable="false"
+            android:paddingHorizontal="24dp"
+            android:contentDescription="TODO"
+            android:focusable="false"
+            android:scaleType="fitXY"
+            android:src="@drawable/plus_minus" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:text="учить цифры"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/main_game_3"
+        app:layout_constraintStart_toStartOf="@+id/main_game_3"
+        app:layout_constraintTop_toBottomOf="@+id/main_game_3" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

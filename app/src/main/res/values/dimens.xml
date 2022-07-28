@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="ln_margin_bottom">12dp</dimen>
+    <dimen name="ariph_text_size">60sp</dimen>
 </resources>

@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mylittlenumbers.databinding.ActivityMainBinding
-import com.example.mylittlenumbers.ui.guess_number.GuessNumber
+import com.example.mylittlenumbers.ui.game.LearnNumbers
+import com.example.mylittlenumbers.ui.game.ariphmetic.AriphmeticActivity
+import com.example.mylittlenumbers.ui.game.guess_number.GuessNumber
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +22,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.mainGame2.setOnClickListener {
             startActivity(Intent(this,GuessNumber::class.java))
+        }
+        binding.mainGame3.setOnClickListener {
+            startActivity(Intent(this,AriphmeticActivity::class.java))
         }
     }
 }

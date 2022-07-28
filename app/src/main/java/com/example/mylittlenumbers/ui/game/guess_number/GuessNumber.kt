@@ -1,4 +1,4 @@
-package com.example.mylittlenumbers.ui.guess_number
+package com.example.mylittlenumbers.ui.game.guess_number
 
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
