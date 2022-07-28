@@ -77,6 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
+        android:layout_marginTop="32dp"
         app:cardCornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
@@ -120,12 +121,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/a_equals"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/a_big_arip"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@+id/cardView">
 
         <TextView
             android:id="@+id/a_second_num"
@@ -234,12 +235,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/a_var_1_container"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/a_equals"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@+id/cardView">
 
         <TextView
             android:id="@+id/a_final_num"
@@ -255,5 +256,104 @@
 
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/a_light_var_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@+id/a_plus"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/a_light_var"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/p_green"
+            android:padding="8dp"
+            android:text="1-10"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/a_hard_var_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@+id/a_light_var_container"
+        app:layout_constraintTop_toBottomOf="@+id/a_light_var_container">
+
+        <TextView
+            android:id="@+id/a_hard_var"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/p_green"
+            android:padding="8dp"
+            android:text="1-100"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <include
+        android:id="@+id/a_interval"
+        layout="@layout/interval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/a_light_var_container"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/a_life"
+        layout="@layout/life"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toEndOf="@+id/a_interval"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/a_play"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:backgroundTint="@color/transparent"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_play_circle_filled_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/gn_stop"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/transparent"
+        android:scaleType="fitXY"
+        android:padding="0dp"
+        android:src="@drawable/ic_baseline_stop_circle_24"
+        app:layout_constraintEnd_toStartOf="@+id/a_var_1_container"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/a_score"
+        layout="@layout/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/a_random" />
 </androidx.constraintlayout.widget.ConstraintLayout>

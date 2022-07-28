@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <TextView
+        android:id="@+id/gn_interval_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Итервал (cek)"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/int_plus"
+        app:layout_constraintStart_toStartOf="@+id/int_minus"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/int_minus"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_minus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gn_interval_label" />
+
+    <TextView
+        android:id="@+id/interval_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/int_minus"
+        app:layout_constraintStart_toEndOf="@+id/int_minus"
+        app:layout_constraintTop_toBottomOf="@+id/gn_interval_label"
+        tools:text="3" />
+
+    <ImageButton
+        android:id="@+id/int_plus"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:backgroundTint="@color/transparent"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintStart_toEndOf="@+id/interval_text"
+        app:layout_constraintTop_toBottomOf="@+id/gn_interval_label" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
